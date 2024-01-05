@@ -1,3 +1,12 @@
+// Amanda Andersson
+// FE23 - Grit Academy
+// API used: https://www.themoviedb.org
+// Animation library used: https://animejs.com
+
+// All varibales are declared in the top except if the needed to be declared inside a function.
+// All eventlisteners are calling functions that are made below
+// In the end om the file i have my error function and lastly my animations
+
 const imgBaseUrl = `https://image.tmdb.org/t/p/`;
 const imgBackdropSize = "w300";
 
@@ -67,7 +76,6 @@ form.addEventListener("submit", (event) => {
 function displayMovies(movies) {
   console.log("hej");
   for (const movie of movies.results) {
-    // console.log(movie);
     const movieCardDiv = document.createElement("div");
     movieCardDiv.classList.add("movieCards");
 
@@ -86,8 +94,6 @@ function displayMovies(movies) {
 }
 
 function displayActors(people) {
-  console.log(people.results);
-
   for (const person of people.results) {
     const movieCardDiv = document.createElement("div");
     movieCardDiv.id = "movieCard";
@@ -113,7 +119,6 @@ function displayActors(people) {
     for (const item of person.known_for) {
       let title;
       if (item.title == null) {
-        console.log(item);
         title = item.name;
       } else {
         title = item.title;
@@ -129,7 +134,6 @@ function displayActors(people) {
 
 topRatedBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("hej");
 
   contentContainer.innerHTML = "";
   contentText.innerHTML = "";
@@ -148,10 +152,7 @@ topRatedBtn.addEventListener("click", (event) => {
 });
 
 function displayTopRated(topRated) {
-  // console.log(topRated);
   for (const topRatedMovie of topRated.results.splice(10)) {
-    // console.log(topRatedMovie);
-
     const movieCardDiv = document.createElement("div");
     movieCardDiv.classList.add("movieCards");
 
@@ -195,9 +196,7 @@ popularBtn.addEventListener("click", (event) => {
 });
 
 function displayPopularMovies(popularMovies) {
-  console.log(popularMovies);
   for (const popularMovie of popularMovies.results.splice(10)) {
-    // console.log(popularMovie);
     const movieCardDiv = document.createElement("div");
     movieCardDiv.classList.add("movieCards");
 
@@ -231,7 +230,6 @@ function createAndAppendElement(type, content, container) {
 }
 
 function displayError(error) {
-  console.log(error);
   contentWrapper.append(errorMessage);
   if (error === 404) {
     errorMessage.innerText =
