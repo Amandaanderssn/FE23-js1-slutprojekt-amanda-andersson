@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slutprojekt - JS - TMDB</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Anton&family=Dela+Gothic+One&family=IBM+Plex+Mono:wght@100&family=Lora:ital@0;1&family=Open+Sans:wght@300&family=Playfair+Display&family=Playpen+Sans:wght@300;800&family=Roboto+Slab:wght@100&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/49ef8e7fc6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./lib/anime.min.js" defer></script>
+    <script src="./index.js" defer></script>
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"
+      defer
+    ></script> -->
+  </head>
+  <body>
+    <div class="header">
+      <h1>TMDB</h1>
+      <nav>
+        <form>
+          <div id="radioBtn">
+            <input
+              type="text"
+              id="textInput"
+              placeholder="write a movie or text.."
+              required
+            />
+            <input
+              type="radio"
+              value="movie"
+              name="movieOrActor"
+              id="movieRadio"
+              checked
+            />
+            <label for="movieRadio">Movie</label>
+            <input
+              type="radio"
+              value="person"
+              name="movieOrActor"
+              id="actorRadio"
+            />
+            <label for="actorRadio">Actor</label>
+
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button type="click">
+              <i class="fa-solid fa-fire" id="topRatedBtn"> Top rated</i>
+            </button>
+            <button type="click">
+              <i class="fa-solid fa-trophy" id="popularBtn"> Popular</i>
+            </button>
+          </div>
+        </form>
+      </nav>
+    </div>
+    <div class="contentWrapper">
+      <div class="contentText"></div>
+      <div id="contentContainer" class="movieCards"></div>
+    </div>
+  </body>
+</html>
